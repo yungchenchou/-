@@ -1,0 +1,56 @@
+package work1009;
+import java.util.Scanner;
+
+public class work1009 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scn = new Scanner(System.in);
+		System.out.println("請輸入一個數值和進位法：");
+		int a = scn.nextInt();
+		int b = scn.nextInt();
+		
+		String c = fun1(a, b);
+		
+
+		
+			System.out.print(fun1(a,b));
+		
+		
+		
+	}
+
+	public static String fun1(int v1, int v2) {
+		int j;
+		int m = 0;
+		
+		String v3 = "0";
+		
+		for (int i = 0; i < 99; i++) {
+
+			if (v1 < 1) {
+				v1 = 0;
+			} else {
+				j = v1 % v2;
+				if (j == 0) {
+					m++;
+					v1 = v1 / v2;
+				} else {
+					v3 += j;
+					v1 = v1 / v2;
+				}
+			}
+		}
+		
+		
+		String p="";
+		for (int k =1;k<=m;k++){
+			p=p+"0";
+		}
+		String point =v3+p;
+
+
+		return point;
+	}
+
+}
